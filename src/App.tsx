@@ -5,7 +5,7 @@ function App() {
   const inputRef = useRef<HTMLInputElement | null>(null);
   const [chips, setChips] = useState<string[]>([]);
 
-  function addChips(event: React.KeyboardEvent<HTMLElement>) {
+  function addChip(event: React.KeyboardEvent<HTMLElement>) {
     const inputValue = inputRef?.current?.value.trim();
     if (event.key === "Enter" && inputValue) {
       setChips([...chips, inputRef?.current?.value as string]);
@@ -15,10 +15,15 @@ function App() {
     }
   }
 
+  function deletChip(chiptoDelete: string) {
+    const remainingChips = chips.filter((chip) => chip !== chiptoDelete);
+    setChips(remainingChips);
+  }
+
   return (
     <div className="app">
       <header>
-        <h1 className="app-heading">Chip Component</h1>
+        <h1 className="app-heading">Pick Movies</h1>
       </header>
       <main>
         <div className="chip-container">
@@ -27,7 +32,12 @@ function App() {
               return (
                 <div className="chip" key={index}>
                   <p className="chip-text">{chip}</p>
-                  <span className="chip-delete">
+                  <span
+                    className="chip-delete"
+                    onClick={() => {
+                      deletChip(chip);
+                    }}
+                  >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="16"
@@ -49,7 +59,7 @@ function App() {
             type="text"
             className="chip-input"
             ref={inputRef}
-            onKeyDown={addChips}
+            onKeyDown={addChip}
           ></input>
         </div>
       </main>
