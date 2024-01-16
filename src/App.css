@@ -1,3 +1,58 @@
-.App {
-  text-align: center;
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.app-heading {
+  margin: 20px 0px 50px;
+}
+
+.chip-container {
+  border-bottom: 2px solid blue;
+  padding: 4px 2px;
+  max-width: 700px;
+  width: 92%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.chip-input {
+  border: none;
+  outline: none;
+}
+
+.chip {
+  display: flex;
+  padding: 4px 8px;
+  min-height: 36px;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  border-radius: 4px;
+  border: 2px solid #f3f3f3;
+  background-color: #f3f3f3;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.12);
+  white-space: nowrap;
+}
+
+.chip-text {
+  color: rgba(42, 42, 42, 1);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.chip-delete {
+  cursor: pointer;
+  max-height: 16px;
+}
+
+.chip-delete > svg > path {
+  fill: rgba(179, 179, 179, 1);
+}
+
+.chip-delete:hover > svg > path {
+  fill: rgba(42, 42, 42, 1);
 }
