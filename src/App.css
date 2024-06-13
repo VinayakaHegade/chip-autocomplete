@@ -56,3 +56,51 @@
 .chip-delete:hover > svg > path {
   fill: rgba(42, 42, 42, 1);
 }
+
+.dropdown-container {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  background-color: #f3f3f3;
+  border-radius: 4px;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.12);
+  z-index: 1;
+}
+
+.dropdown-item {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background-color: #d9d9d9;
+}
+
+.selected-item-container {
+  display: flex;
+  align-items: center;
+  background-color: #f3f3f3;
+  border-radius: 4px;
+  padding: 4px 8px;
+  margin-right: 8px;
+}
+
+.selected-item-text {
+  color: rgba(42, 42, 42, 1);
+  font-size: 16px;
+  font-weight: 500;
+  margin-right: 8px;
+}
+
+.selected-item-delete {
+  cursor: pointer;
+  max-height: 16px;
+}
+
+.selected-item-delete > svg > path {
+  fill: rgba(179, 179, 179, 1);
+}
+
+.selected-item-delete:hover > svg > path {
+  fill: rgba(42, 42, 42, 1);
+}
